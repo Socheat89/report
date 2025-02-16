@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Timer</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #ff4b6a;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #ff4b6a;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .timer {
+            display: flex;
+            justify-content: space-around;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .label {
+            font-size: 14px;
+            color: gray;
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .icons img {
+            width: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goBack()">⬅ Back</button>
+        <h2>💖 Happy 2nd Anniversary 💖</h2>
+        <p>How long we have been together?</p>
+        <div class="timer" id="timer">
+            <div class="unit"><span id="days">0</span><span class="label">Days</span></div>
+            <div class="unit"><span id="hours">0</span><span class="label">Hours</span></div>
+            <div class="unit"><span id="minutes">0</span><span class="label">Minutes</span></div>
+            <div class="unit"><span id="seconds">0</span><span class="label">Seconds</span></div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-paw"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-plane"></i>
+            <i class="fas fa-ring"></i>
+        </div>
+    </div>
+    <script>
+        function updateTimer() {
+            const startDate = new Date("2017-03-15T00:00:00");
+            const now = new Date();
+            const difference = now - startDate;
+
+            document.getElementById("days").textContent = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").textContent = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            document.getElementById("minutes").textContent = Math.floor((difference / (1000 * 60)) % 60);
+            document.getElementById("seconds").textContent = Math.floor((difference / 1000) % 60);
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

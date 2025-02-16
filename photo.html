@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .block-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .block-photo:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="block-photo" id="photo1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKtrMlVjCNVSXQIjhVxKrSigdgjh4-p5npMg&s" alt="Sweet Kitten 1">
+        </div>
+        <div class="block-photo" id="photo2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ09FOFmqnc9xXpWHnvHk_Ut9MP3BE_MSpQtA&s" alt="Sweet Kitten 2">
+        </div>
+        <div class="block-photo" id="photo3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyxzqI4bRRqeLyPzxdCFVZhAucKsmqo9kitA&s" alt="Sweet Kitten 3">
+        </div>
+        <div class="block-photo" id="photo4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0wcG3WO-ijYQL0DKjygCvzUK0tmW0xpl_UQ&s" alt="Sweet Kitten 4">
+        </div>
+        <div class="block-photo" id="photo5">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGpkvCOFMOxta8CAQSJva2CEQngjdF_VQ7fw&s" alt="Sweet Kitten 5">
+        </div>
+        <div class="block-photo" id="photo6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqG1cTwLaKaoCuq8GygjUwdTNzJgx46mTH_A&s" alt="Sweet Kitten 6">
+        </div>
+        <div class="block-photo" id="photo7">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2FUqXbFwNDe83gcyBXCQ5gjRBrZAMCeqEQ&s" alt="Sweet Kitten 7">
+        </div>
+        <div class="block-photo" id="photo8">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrw0PDc3d-elxbCHaNoD8g41hSf_fvtyGEuQ&s" alt="Sweet Kitten 8">
+        </div>
+        <div class="block-photo" id="photo9">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1uzTXLfSbm5qWaG7IJpc0YPK18L0186dAVQ&s" alt="Sweet Kitten 9">
+        </div>
+        <div class="block-photo" id="photo10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-WOCwQKjyHcu6dZIZYinACyqwYYfVxEtdGQ&s" alt="Sweet Kitten 10">
+        </div>
+    </div>
+
+</body>
+</html>
