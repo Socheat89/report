@@ -23,11 +23,17 @@
         let output = document.getElementById('output');
         
         async function startScan() {
-            let stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
-            video.srcObject = stream;
-            video.setAttribute("playsinline", true);
-            video.play();
-            scanFrame();
+            try {
+                const constraints = { video: { facingMode: "environment" } };
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                video.srcObject = stream;
+                video.setAttribute("playsinline", true);
+                video.play();
+                requestAnimationFrame(scanFrame);
+            } catch (error) {
+                alert("Camera access is not available. Please enable camera permissions.");
+                console.error("Error accessing camera:", error);
+            }
         }
 
         function scanFrame() {
@@ -40,7 +46,9 @@
                 
                 if (code) {
                     output.innerText = code.data;
-                    window.location.href = code.data;
+                    if (code.data.startsWith("http")) {
+                        window.location.href = code.data;
+                    }
                 }
             }
             requestAnimationFrame(scanFrame);
